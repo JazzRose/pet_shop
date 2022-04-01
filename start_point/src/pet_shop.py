@@ -46,6 +46,7 @@ def find_pet_by_name(pet_shop,name):
     for pet in pets:
         if pet["name"] == name:
             return pet
+# below works but is not really correct
 #     list_of_pets_names = []
 #     pets = pet_shop["pets"]
 
@@ -53,5 +54,18 @@ def find_pet_by_name(pet_shop,name):
 #         if pet ["name"] == name:
 #             list_of_pets_names.append(pet)
 # # add item that is being looped
-#     return list_of_pets_names
+#     return list_of_pets_names[0]
 
+
+def remove_pet_by_name(pet_shop,pet_name):
+    pets = pet_shop["pets"]
+
+    for pet in pets:
+        if pet["name"] == pet_name:
+            pets.remove(pet)
+        return pets
+        
+def add_pet_to_stock(pet_shop,new_pet):
+    pet_shop["pets"].append(new_pet)
+    return len(pet_shop["pets"])
+# add new pet to list pet_shop.pets + return lentgth of new list.
